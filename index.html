@@ -219,7 +219,7 @@
             
             <button id="song1Btn" onclick="playSong(1)" class="px-3 py-2 rounded-full royal-card text-xs md:text-sm font-semibold text-diwali-glowGold hover:text-diwali-gold flex items-center gap-2 transition-all duration-300 active:scale-95">
                 <i id="song1Icon" class="fa-solid fa-music text-diwali-amber"></i>
-                <span id="song1Text">HAPPY DIVALI CLICK HEAR</span>
+                <span id="song1Text">HAPPY DIVALI CLICK HERE</span>
             </button>
 
 
@@ -596,29 +596,29 @@
                 if (!song1.paused) {
                     song1.pause();
                     icon1.className = 'fa-solid fa-music text-diwali-amber';
-                    text1.innerText = 'संगीत १';
+                    text1.innerText = 'HAPPY DIVALI CLICK HERE';
                 } else {
                     song2.pause();
                     icon2.className = 'fa-solid fa-music text-diwali-amber';
-                    text2.innerText = 'संगीत २';
+                    text2.innerText = 'CLICK HERE TO मेरयु';
 
                     song1.play().catch(e => console.log('Audio play error:', e));
                     icon1.className = 'fa-solid fa-compact-disc text-diwali-gold animate-spin';
-                    text1.innerText = 'संगीत १ (Playing)';
+                    text1.innerText = 'HAPPY DIVALI (Playing)';
                 }
             } else if (songNum === 2) {
                 if (!song2.paused) {
                     song2.pause();
                     icon2.className = 'fa-solid fa-music text-diwali-amber';
-                    text2.innerText = 'संगीत २';
+                    text2.innerText = 'CLICK HERE TO मेरयु';
                 } else {
                     song1.pause();
                     icon1.className = 'fa-solid fa-music text-diwali-amber';
-                    text1.innerText = 'संगीत १';
+                    text1.innerText = 'HAPPY DIVALI CLICK HERE';
 
                     song2.play().catch(e => console.log('Audio play error:', e));
                     icon2.className = 'fa-solid fa-compact-disc text-diwali-gold animate-spin';
-                    text2.innerText = 'संगीत २ (Playing)';
+                    text2.innerText = 'CLICK HERE TO मेरयु (Playing)';
                 }
             }
         }
