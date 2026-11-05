@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="hi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दीपावली की हार्दिक शुभकामनाएं | Devansh Giri Goswami</title>
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Kalam:wght@400;700&family=Poppins:wght@300;400;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        diwali: {
+                            gold: '#FFD700',
+                            brightGold: '#FFE55C',
+                            amber: '#FF9F00',
+                            orange: '#FF5722',
+                            maroon: '#3A040B',
+                            deepMaroon: '#1D0206',
+                            royalPurple: '#0E041A',
+                            glowGold: '#FFF2A8'
+                        }
+                    },
+                    fontFamily: {
+                        rozha: ['"Rozha One"', 'serif'],
+                        yatra: ['"Yatra One"', 'cursive'],
+                        kalam: ['"Kalam"', 'cursive'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        poppins: ['"Poppins"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #2e050d 0%, #150207 60%, #080104 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .font-rozha { font-family: 'Rozha One', serif; }
+        .font-yatra { font-family: 'Yatra One', cursive; }
+        .font-kalam { font-family: 'Kalam', cursive; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+
+        
+        #fireworksCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        
+        .gold-metallic-text {
+            background: linear-gradient(135deg, #FFF8DB 0%, #FFD700 25%, #FFA500 50%, #FFD700 75%, #FFF8DB 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShine 4s linear infinite;
+            filter: drop-shadow(0 4px 15px rgba(255, 215, 0, 0.4));
+        }
+
+        @keyframes goldShine {
+            to { background-position: 200% center; }
+        }
+
+        
+        .royal-card {
+            background: rgba(35, 4, 10, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 215, 0, 0.12);
+        }
+
+        
+        .flame {
+            width: 20px;
+            height: 32px;
+            background: radial-gradient(ellipse at bottom, #ffffff 0%, #ffe600 25%, #ff5d00 65%, transparent 100%);
+            border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+            box-shadow: 0 0 20px #ffb700, 0 -10px 25px #ff5d00, 0 -18px 35px #ff0000;
+            animation: flameFlicker 0.12s infinite alternate ease-in-out, flameSway 2.5s infinite alternate ease-in-out;
+            transform-origin: center bottom;
+        }
+
+        .flame-off {
+            opacity: 0;
+            transform: scale(0);
+            box-shadow: none;
+            transition: all 0.4s ease;
+        }
+
+        @keyframes flameFlicker {
+            0% { transform: scale(1) rotate(-1.5deg); opacity: 0.95; }
+            100% { transform: scale(1.1) rotate(1.5deg); opacity: 1; }
+        }
+
+        @keyframes flameSway {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        
+        .floating-kandil {
+            animation: kandilFloat 16s linear infinite;
+        }
+
+        @keyframes kandilFloat {
+            0% { transform: translateY(105vh) scale(0.6) rotate(-5deg); opacity: 0; }
+            15% { opacity: 0.85; }
+            85% { opacity: 0.85; }
+            100% { transform: translateY(-15vh) scale(1.05) rotate(10deg); opacity: 0; }
+        }
+
+       
+        .rangoli-spin {
+            animation: spinSlow 60s linear infinite;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        
+        .sparkle-glow {
+            animation: pulseGlow 2s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { opacity: 0.4; filter: drop-shadow(0 0 5px #ffd700); }
+            100% { opacity: 1; filter: drop-shadow(0 0 20px #ffd700); }
+        }
+
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080104; }
+        ::-webkit-scrollbar-thumb { background: #ff9f00; border-radius: 4px; }
+    </style>
+</head>
+<body class="relative min-h-screen pb-16">
+
+    
+    <audio id="audioSong1" src="11.mp3" preload="auto"></audio>
+    <audio id="audioSong2" src="12.mp3" preload="auto"></audio>
+
+
+    <canvas id="fireworksCanvas"></canvas>
+
+   
+    <div id="kandilContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      
+    </div>
+
+   
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none opacity-10 z-0 rangoli-spin">
+        <svg viewBox="0 0 200 200" fill="none" stroke="#FFD700" stroke-width="0.8">
+            <circle cx="100" cy="100" r="90" stroke-dasharray="4 2"/>
+            <circle cx="100" cy="100" r="70"/>
+            <circle cx="100" cy="100" r="50"/>
+            <path d="M100 10 L100 190 M10 100 L190 100 M36 36 L164 164 M36 164 L164 36"/>
+            <path d="M100 30 Q120 60 100 90 Q80 60 100 30 Z" fill="rgba(255,215,0,0.1)"/>
+            <path d="M100 110 Q120 140 100 170 Q80 140 100 110 Z" fill="rgba(255,215,0,0.1)"/>
+            <path d="M30 100 Q60 120 90 100 Q60 80 30 100 Z" fill="rgba(255,215,0,0.1)"/>
+            <path d="M110 100 Q140 120 170 100 Q140 80 110 100 Z" fill="rgba(255,215,0,0.1)"/>
+        </svg>
+    </div>
+
+    
+    <div class="w-full flex justify-between items-center px-2 z-20 relative pointer-events-none opacity-90 select-none">
+        <div class="flex space-x-1">
+            <span class="text-2xl sm:text-4xl">🌺</span>
+            <span class="text-2xl sm:text-4xl text-diwali-amber">🌼</span>
+            <span class="text-2xl sm:text-4xl">🌺</span>
+            <span class="text-2xl sm:text-4xl text-diwali-amber hidden sm:inline">🌼</span>
+        </div>
+        <div class="h-1 bg-gradient-to-r from-transparent via-diwali-gold to-transparent flex-1 mx-4 opacity-50"></div>
+        <div class="flex space-x-1">
+            <span class="text-2xl sm:text-4xl text-diwali-amber hidden sm:inline">🌼</span>
+            <span class="text-2xl sm:text-4xl">🌺</span>
+            <span class="text-2xl sm:text-4xl text-diwali-amber">🌼</span>
+            <span class="text-2xl sm:text-4xl">🌺</span>
+        </div>
+    </div>
+
+   
+    <header class="relative z-20 w-full px-4 py-4 md:px-10 flex flex-wrap items-center justify-between gap-4 border-b border-diwali-gold/30 bg-diwali-royalPurple/60 backdrop-blur-md">
+        <div class="flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-diwali-amber via-diwali-orange to-diwali-gold flex items-center justify-center shadow-lg shadow-diwali-amber/40">
+                <i class="fa-solid fa-om text-diwali-deepMaroon text-2xl"></i>
+            </div>
+            <div>
+                <span class="font-yatra text-2xl tracking-wider text-diwali-gold block leading-none">शुभ दीपावली</span>
+                <span class="text-[10px] text-diwali-amber tracking-widest uppercase font-semibold">महोत्सव २०२६</span>
+            </div>
+        </div>
+
+        
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            
+            <button id="song1Btn" onclick="playSong(1)" class="px-3 py-2 rounded-full royal-card text-xs md:text-sm font-semibold text-diwali-glowGold hover:text-diwali-gold flex items-center gap-2 transition-all duration-300 active:scale-95">
+                <i id="song1Icon" class="fa-solid fa-music text-diwali-amber"></i>
+                <span id="song1Text">HAPPY DIVALI CLICK HEAR</span>
+            </button>
+
+
+            <button id="song2Btn" onclick="playSong(2)" class="px-3 py-2 rounded-full royal-card text-xs md:text-sm font-semibold text-diwali-glowGold hover:text-diwali-gold flex items-center gap-2 transition-all duration-300 active:scale-95">
+                <i id="song2Icon" class="fa-solid fa-music text-diwali-amber"></i>
+                <span id="song2Text">CLICK HERE TO मेरयु</span>
+            </button>
+
+         
+            <button id="autoBurstBtn" onclick="toggleAutoFireworks()" class="px-3 py-2 rounded-full royal-card text-xs md:text-sm font-semibold text-diwali-glowGold hover:text-diwali-gold flex items-center gap-2 transition-all duration-300 active:scale-95">
+                <i class="fa-solid fa-wand-magic-sparkles text-diwali-gold"></i>
+                <span id="autoBurstText">ऑटो आतिशबाजी (ON)</span>
+            </button>
+        </div>
+    </header>
+
+        <main class="relative z-20 max-w-5xl mx-auto px-4 pt-10 md:pt-14 space-y-16">
+
+    
+        <section class="text-center space-y-6 relative">
+
+           
+            <div class="inline-flex items-center justify-center gap-3 px-6 py-2 rounded-full border-2 border-diwali-gold/50 bg-diwali-deepMaroon/80 text-diwali-gold text-sm md:text-base font-semibold tracking-widest shadow-xl sparkle-glow">
+                <span>卐</span>
+                <span>दीपोत्सव पर्व</span>
+                <span>卐</span>
+            </div>
+
+         
+            <div class="space-y-3 max-w-4xl mx-auto">
+                <h1 class="font-yatra text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight gold-metallic-text tracking-wide drop-shadow-2xl">
+                    दीपावली की हार्दिक शुभकामनाएं
+                </h1>
+
+               
+                <div class="pt-2">
+                    <div class="inline-block relative px-8 py-3 rounded-2xl bg-gradient-to-r from-diwali-maroon via-diwali-deepMaroon to-diwali-maroon border-2 border-diwali-gold/60 shadow-2xl">
+                        <p class="font-kalam text-2xl sm:text-4xl md:text-5xl text-diwali-brightGold font-bold tracking-wider">
+                            Devansh Giri Goswami की ओर से
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="max-w-2xl mx-auto pt-4">
+                <div class="royal-card rounded-2xl p-6 text-center space-y-2 relative overflow-hidden">
+                    <div class="text-diwali-amber text-xs font-semibold uppercase tracking-widest">॥ पावन मंगल श्लोक ॥</div>
+                    <p class="font-rozha text-xl sm:text-2xl text-diwali-glowGold leading-relaxed">
+                        "ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय ।<br>मृत्योर्मा अमृतं गमय ॥"
+                    </p>
+                    <p class="text-xs text-gray-300 italic pt-1">
+                        (हे ईश्वर! हमें असत्य से सत्य की ओर, अंधकार से प्रकाश की ओर एवं मृत्यु से अमरता की ओर ले चलें।)
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="pt-4 flex flex-col items-center justify-center gap-2">
+                <button onclick="triggerMassiveBurst()" class="group relative inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-diwali-orange via-diwali-amber to-diwali-gold text-diwali-deepMaroon font-extrabold text-lg md:text-xl shadow-2xl shadow-diwali-amber/40 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+                    <i class="fa-solid fa-fire-flame-curved text-2xl group-hover:rotate-12 transition-transform"></i>
+                    <span>आकाश में पटाखे फोड़ें (Tap Anywhere)</span>
+                </button>
+                <span class="text-xs text-diwali-amber/80 font-medium animate-pulse">💡 स्क्रीन पर कहीं भी टैप करके आतिशबाजी करें</span>
+            </div>
+        </section>
+
+        
+        <section class="royal-card rounded-3xl p-6 md:p-10 text-center relative overflow-hidden">
+            <div class="space-y-2 mb-8">
+                <h2 class="font-yatra text-3xl md:text-4xl text-diwali-gold">डिजिटल दीप प्रज्ज्वलन</h2>
+                <p class="text-sm md:text-base text-gray-300">दीयों को स्पर्श करके प्रकाश और खुशहाली फैलाएं</p>
+            </div>
+
+        
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+
+                <div class="diya-item flex flex-col items-center p-5 rounded-2xl bg-diwali-royalPurple/80 border border-diwali-gold/30 hover:border-diwali-gold cursor-pointer transition-all duration-300 group" onclick="toggleSingleDiya(this)">
+                    <div class="flame-box h-10 flex items-end justify-center mb-1">
+                        <div class="flame"></div>
+                    </div>
+                    <svg class="w-16 h-12 text-diwali-amber group-hover:scale-110 transition-transform" viewBox="0 0 100 60" fill="currentColor">
+                        <path d="M10 30 Q50 65 90 30 Q85 20 50 25 Q15 20 10 30 Z" fill="#9a3412" stroke="#fbbf24" stroke-width="2.5"/>
+                        <circle cx="50" cy="27" r="3" fill="#FFE55C"/>
+                    </svg>
+                    <span class="text-xs font-bold text-diwali-gold mt-3">सुख-समृद्धि दीप</span>
+                </div>
+
+                
+                <div class="diya-item flex flex-col items-center p-5 rounded-2xl bg-diwali-royalPurple/80 border border-diwali-gold/30 hover:border-diwali-gold cursor-pointer transition-all duration-300 group" onclick="toggleSingleDiya(this)">
+                    <div class="flame-box h-10 flex items-end justify-center mb-1">
+                        <div class="flame"></div>
+                    </div>
+                    <svg class="w-16 h-12 text-diwali-amber group-hover:scale-110 transition-transform" viewBox="0 0 100 60" fill="currentColor">
+                        <path d="M10 30 Q50 65 90 30 Q85 20 50 25 Q15 20 10 30 Z" fill="#7c2d12" stroke="#f97316" stroke-width="2.5"/>
+                        <circle cx="50" cy="27" r="3" fill="#FFE55C"/>
+                    </svg>
+                    <span class="text-xs font-bold text-diwali-gold mt-3">उत्तम स्वास्थ्य दीप</span>
+                </div>
+
+              
+                <div class="diya-item flex flex-col items-center p-5 rounded-2xl bg-diwali-royalPurple/80 border border-diwali-gold/30 hover:border-diwali-gold cursor-pointer transition-all duration-300 group" onclick="toggleSingleDiya(this)">
+                    <div class="flame-box h-10 flex items-end justify-center mb-1">
+                        <div class="flame"></div>
+                    </div>
+                    <svg class="w-16 h-12 text-diwali-amber group-hover:scale-110 transition-transform" viewBox="0 0 100 60" fill="currentColor">
+                        <path d="M10 30 Q50 65 90 30 Q85 20 50 25 Q15 20 10 30 Z" fill="#9a3412" stroke="#fbbf24" stroke-width="2.5"/>
+                        <circle cx="50" cy="27" r="3" fill="#FFE55C"/>
+                    </svg>
+                    <span class="text-xs font-bold text-diwali-gold mt-3">शांति एवं आनंद दीप</span>
+                </div>
+
+                
+                <div class="diya-item flex flex-col items-center p-5 rounded-2xl bg-diwali-royalPurple/80 border border-diwali-gold/30 hover:border-diwali-gold cursor-pointer transition-all duration-300 group" onclick="toggleSingleDiya(this)">
+                    <div class="flame-box h-10 flex items-end justify-center mb-1">
+                        <div class="flame"></div>
+                    </div>
+                    <svg class="w-16 h-12 text-diwali-amber group-hover:scale-110 transition-transform" viewBox="0 0 100 60" fill="currentColor">
+                        <path d="M10 30 Q50 65 90 30 Q85 20 50 25 Q15 20 10 30 Z" fill="#7c2d12" stroke="#f97316" stroke-width="2.5"/>
+                        <circle cx="50" cy="27" r="3" fill="#FFE55C"/>
+                    </svg>
+                    <span class="text-xs font-bold text-diwali-gold mt-3">असीम सौभाग्य दीप</span>
+                </div>
+
+            </div>
+
+           
+            <div class="flex justify-center gap-4 mt-8">
+                <button onclick="controlAllDiyas(true)" class="px-6 py-2.5 rounded-full bg-diwali-amber/20 hover:bg-diwali-amber/30 text-diwali-gold border border-diwali-gold/50 text-xs md:text-sm font-semibold transition-all">
+                    🪔 सभी दीये प्रज्ज्वलित करें
+                </button>
+                <button onclick="controlAllDiyas(false)" class="px-6 py-2.5 rounded-full bg-red-950/40 hover:bg-red-900/40 text-gray-300 border border-red-500/30 text-xs md:text-sm font-semibold transition-all">
+                    बुझाएं
+                </button>
+            </div>
+        </section>
+
+        
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+         
+            <div class="royal-card rounded-3xl p-8 space-y-4 border border-diwali-gold/40 relative overflow-hidden">
+                <div class="w-12 h-12 rounded-2xl bg-diwali-amber/20 border border-diwali-gold/40 flex items-center justify-center text-diwali-gold text-2xl">
+                    🪔
+                </div>
+                <h3 class="font-yatra text-2xl text-diwali-gold">मंगलकामना संदेश</h3>
+                <p class="font-kalam text-xl md:text-2xl text-diwali-glowGold leading-relaxed">
+                    "दीपों की पावन रोशनी से आपका जीवन सदा आलोकित रहे। मां लक्ष्मी और भगवान श्री गणेश की कृपा से आपके घर में सुख, समृद्धि और शांति का वास हो।"
+                </p>
+                <div class="pt-4 border-t border-diwali-gold/20 text-xs text-diwali-amber font-semibold tracking-wider uppercase">
+                    — Devansh Giri Goswami
+                </div>
+            </div>
+
+           
+            <div class="royal-card rounded-3xl p-8 space-y-4 border border-diwali-gold/40 relative overflow-hidden">
+                <div class="w-12 h-12 rounded-2xl bg-diwali-amber/20 border border-diwali-gold/40 flex items-center justify-center text-diwali-gold text-2xl">
+                    ✨
+                </div>
+                <h3 class="font-yatra text-2xl text-diwali-gold">समृद्धि एवं उत्तम स्वास्थ्य</h3>
+                <p class="font-kalam text-xl md:text-2xl text-diwali-glowGold leading-relaxed">
+                    "यह दीपावली आपके और आपके संपूर्ण परिवार के जीवन में अपार सफलता, उत्तम स्वास्थ्य एवं अटूट खुशियाँ लेकर आए।"
+                </p>
+                <div class="pt-4 border-t border-diwali-gold/20 text-xs text-diwali-amber font-semibold tracking-wider uppercase">
+                    — शुभेच्छु: देवंश गिरि गोस्वामी
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+   
+    <div class="w-full mt-16 py-4 bg-diwali-deepMaroon/90 border-t-2 border-diwali-gold/40 flex justify-around items-center px-4 relative z-20">
+        <span class="text-xl sm:text-2xl">🪔</span>
+        <span class="text-xs sm:text-sm font-yatra text-diwali-gold tracking-widest uppercase">शुभ दीपावली २०२६</span>
+        <span class="text-xl sm:text-2xl">🪔</span>
+        <span class="text-xs sm:text-sm font-yatra text-diwali-gold tracking-widest uppercase hidden sm:inline">Devansh Giri Goswami</span>
+        <span class="text-xl sm:text-2xl">🪔</span>
+    </div>
+
+    
+    <footer class="relative z-20 text-center py-6 text-xs text-gray-400 space-y-2">
+        <p class="font-kalam text-xl text-diwali-brightGold font-bold">🪔 ॐ श्री महालक्ष्म्यै नमः 🪔</p>
+        <p class="text-diwali-gold/90 font-medium">Devansh Giri Goswami की ओर से सहर्ष समर्पित</p>
+    </footer>
+
+  
+    <script>
+        
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let autoBurstInterval = null;
+        let isAutoBurstOn = true;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class FireworkParticle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 7 + 2;
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.018 + 0.012;
+                this.gravity = 0.06;
+                this.size = Math.random() * 3.5 + 1.5;
+            }
+
+            update() {
+                this.vx *= 0.98;
+                this.vy *= 0.98;
+                this.vy += this.gravity;
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= this.decay;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(this.alpha, 0);
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 12;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function createBurst(x, y) {
+            const colors = ['#FFD700', '#FF5722', '#FF007F', '#00FFFF', '#FF9F00', '#7FFF00', '#FFE55C', '#FFFFFF'];
+            const count = 70 + Math.floor(Math.random() * 40);
+            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+
+            for (let i = 0; i < count; i++) {
+                particles.push(new FireworkParticle(x, y, chosenColor));
+            }
+            playExplosionSound();
+        }
+
+        function triggerMassiveBurst() {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight * 0.35;
+            createBurst(centerX, centerY);
+            setTimeout(() => createBurst(centerX - 150, centerY + 80), 200);
+            setTimeout(() => createBurst(centerX + 150, centerY + 80), 400);
+        }
+
+        function renderFireworks() {
+            ctx.fillStyle = 'rgba(8, 1, 4, 0.22)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+            requestAnimationFrame(renderFireworks);
+        }
+
+        
+        window.addEventListener('click', (e) => {
+            if (e.target.closest('button')) return;
+            createBurst(e.clientX, e.clientY);
+        });
+
+        function toggleAutoFireworks() {
+            const btnText = document.getElementById('autoBurstText');
+            isAutoBurstOn = !isAutoBurstOn;
+
+            if (isAutoBurstOn) {
+                btnText.innerText = 'ऑटो आतिशबाजी (ON)';
+                startAutoBurst();
+            } else {
+                btnText.innerText = 'ऑटो आतिशबाजी (OFF)';
+                clearInterval(autoBurstInterval);
+            }
+        }
+
+        function startAutoBurst() {
+            clearInterval(autoBurstInterval);
+            autoBurstInterval = setInterval(() => {
+                const rx = Math.random() * (canvas.width * 0.8) + (canvas.width * 0.1);
+                const ry = Math.random() * (canvas.height * 0.45) + (canvas.height * 0.1);
+                createBurst(rx, ry);
+            }, 1100);
+        }
+
+        
+        function toggleSingleDiya(element) {
+            const flame = element.querySelector('.flame');
+            if (flame.classList.contains('flame-off')) {
+                flame.classList.remove('flame-off');
+                element.classList.add('border-diwali-gold');
+                playBellSound();
+            } else {
+                flame.classList.add('flame-off');
+                element.classList.remove('border-diwali-gold');
+            }
+        }
+
+        function controlAllDiyas(turnOn) {
+            const diyas = document.querySelectorAll('.diya-item');
+            diyas.forEach(d => {
+                const flame = d.querySelector('.flame');
+                if (turnOn) {
+                    flame.classList.remove('flame-off');
+                    d.classList.add('border-diwali-gold');
+                } else {
+                    flame.classList.add('flame-off');
+                    d.classList.remove('border-diwali-gold');
+                }
+            });
+            if (turnOn) playBellSound();
+        }
+
+        
+        function generateKandils() {
+            const container = document.getElementById('kandilContainer');
+            const count = 14;
+
+            for (let i = 0; i < count; i++) {
+                const kandil = document.createElement('div');
+                kandil.className = 'floating-kandil absolute rounded-b-full bg-gradient-to-t from-red-600 via-orange-500 to-yellow-400 opacity-80 shadow-lg shadow-orange-500/50';
+                
+                const width = Math.random() * 18 + 14;
+                const height = width * 1.5;
+                const left = Math.random() * 95;
+                const delay = Math.random() * 14;
+                const duration = Math.random() * 8 + 12;
+
+                kandil.style.width = `${width}px`;
+                kandil.style.height = `${height}px`;
+                kandil.style.left = `${left}%`;
+                kandil.style.animationDelay = `${delay}s`;
+                kandil.style.animationDuration = `${duration}s`;
+
+                container.appendChild(kandil);
+            }
+        }
+
+        
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playSong(songNum) {
+            const song1 = document.getElementById('audioSong1');
+            const song2 = document.getElementById('audioSong2');
+            const icon1 = document.getElementById('song1Icon');
+            const icon2 = document.getElementById('song2Icon');
+            const text1 = document.getElementById('song1Text');
+            const text2 = document.getElementById('song2Text');
+
+            if (songNum === 1) {
+                if (!song1.paused) {
+                    song1.pause();
+                    icon1.className = 'fa-solid fa-music text-diwali-amber';
+                    text1.innerText = 'संगीत १';
+                } else {
+                    song2.pause();
+                    icon2.className = 'fa-solid fa-music text-diwali-amber';
+                    text2.innerText = 'संगीत २';
+
+                    song1.play().catch(e => console.log('Audio play error:', e));
+                    icon1.className = 'fa-solid fa-compact-disc text-diwali-gold animate-spin';
+                    text1.innerText = 'संगीत १ (Playing)';
+                }
+            } else if (songNum === 2) {
+                if (!song2.paused) {
+                    song2.pause();
+                    icon2.className = 'fa-solid fa-music text-diwali-amber';
+                    text2.innerText = 'संगीत २';
+                } else {
+                    song1.pause();
+                    icon1.className = 'fa-solid fa-music text-diwali-amber';
+                    text1.innerText = 'संगीत १';
+
+                    song2.play().catch(e => console.log('Audio play error:', e));
+                    icon2.className = 'fa-solid fa-compact-disc text-diwali-gold animate-spin';
+                    text2.innerText = 'संगीत २ (Playing)';
+                }
+            }
+        }
+
+        function playBellSound() {
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(987.77, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(1318.51, audioCtx.currentTime + 0.08);
+
+            gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.2);
+        }
+
+        function playExplosionSound() {
+            if (!audioCtx || audioCtx.state === 'suspended') return;
+
+            const bufferSize = audioCtx.sampleRate * 0.15;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(800, audioCtx.currentTime);
+            filter.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.15);
+
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            noise.start();
+        }
+
+       
+        window.onload = function () {
+            renderFireworks();
+            generateKandils();
+            startAutoBurst();
+
+            setTimeout(() => {
+                triggerMassiveBurst();
+            }, 500);
+        };
+    </script>
+</body>
+</html>
